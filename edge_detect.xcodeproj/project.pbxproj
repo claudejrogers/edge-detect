@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		DC40F52D13C6B2CD0007A792 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = DC40F52C13C6B2CD0007A792 /* main.c */; };
+		DC40F53613C6B3080007A792 /* edge_detect.c in Sources */ = {isa = PBXBuildFile; fileRef = DC40F53413C6B3080007A792 /* edge_detect.c */; };
+		DC40F53913C6B31A0007A792 /* jpegio.c in Sources */ = {isa = PBXBuildFile; fileRef = DC40F53713C6B31A0007A792 /* jpegio.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,6 +28,10 @@
 		DC40F52813C6B2CD0007A792 /* edge_detect */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = edge_detect; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC40F52C13C6B2CD0007A792 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		DC40F52E13C6B2CD0007A792 /* edge_detect.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = edge_detect.1; sourceTree = "<group>"; };
+		DC40F53413C6B3080007A792 /* edge_detect.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = edge_detect.c; sourceTree = "<group>"; };
+		DC40F53513C6B3080007A792 /* edge_detect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = edge_detect.h; sourceTree = "<group>"; };
+		DC40F53713C6B31A0007A792 /* jpegio.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = jpegio.c; sourceTree = "<group>"; };
+		DC40F53813C6B31A0007A792 /* jpegio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jpegio.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +65,10 @@
 			isa = PBXGroup;
 			children = (
 				DC40F52C13C6B2CD0007A792 /* main.c */,
+				DC40F53413C6B3080007A792 /* edge_detect.c */,
+				DC40F53713C6B31A0007A792 /* jpegio.c */,
+				DC40F53813C6B31A0007A792 /* jpegio.h */,
+				DC40F53513C6B3080007A792 /* edge_detect.h */,
 				DC40F52E13C6B2CD0007A792 /* edge_detect.1 */,
 			);
 			path = edge_detect;
@@ -115,6 +125,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC40F52D13C6B2CD0007A792 /* main.c in Sources */,
+				DC40F53613C6B3080007A792 /* edge_detect.c in Sources */,
+				DC40F53913C6B31A0007A792 /* jpegio.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,6 +172,9 @@
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = /Users/cjrogers/Documents/XCode/edge_detect;
+				OTHER_LDFLAGS = "-ljpeg";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -171,6 +186,9 @@
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = /Users/cjrogers/Documents/XCode/edge_detect;
+				OTHER_LDFLAGS = "-ljpeg";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
