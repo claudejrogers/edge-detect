@@ -62,11 +62,9 @@ read_JPEG_file(char * filename, JSAMPLE *image_data,
         (void) jpeg_read_scanlines(&cinfo, buffer, 1);
         for (i = 0; i < cinfo.output_width; i++) {
             r = buffer[0][i * 3];
-            if (r < r_thrs)
-                r = 0;
+            r = (r < r_thrs) ? 0 : r;
             g = buffer[0][i * 3 + 1];
-            if (g < g_thrs)
-                g = 0;
+            g = (g < g_thrs) ? 0 : g;
             b = buffer[0][i * 3 + 2];
             j = (y * IMAGE_HEIGHT) + i;
             image_data[j * 3] = r;
